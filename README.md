@@ -1,6 +1,8 @@
 # Agent Workspace Convention
 
-Agent workspace convention is a set of rules for ai agents to maintain durable shared context about a topic across sessions. An agent workspace may represent a ticket, investigation, or any other topic. For example, to resolve a ticket, I need to read the codebase for background knowledge, triage the bug statically, reproduce the bug, and implement the fix. All these can be organized under one workspace about this ticket, so an agent implementing the fix can know how the bug can be reproduced.
+Agent workspace convention is a set of rules for ai agents to maintain durable shared context about a topic across sessions. An agent workspace may represent a ticket, investigation, or any other topic. 
+
+For example, to resolve a ticket, I need to let agents read the codebase for background knowledge, triage the bug statically, reproduce the bug, and implement the fix. All these can be organized under one workspace about this ticket, so an agent implementing the fix can know how the bug can be reproduced.
 
 Agent workspace convention provides these features:
 
@@ -8,7 +10,7 @@ Agent workspace convention provides these features:
 
 - Progressive disclosure about the shared context, so we don't dilute the agent's context
 
-- Track agent workspace evolution with git
+- Tracking agent workspace evolution with git
 
 ## Getting Started
 
@@ -23,7 +25,7 @@ Agent workspace convention provides these features:
     ~/agent-root/init-agent-ws.sh <workspace name>
     ```
 
-- Update global AGENTS.md file to point agent to `~/agent-root/README.md` if necessary. For example, I'm using this bullet point in my global AGEMTS.md
+- Update global AGENTS.md file to point agents to `~/agent-root/README.md` if necessary. For example, I'm using this bullet point in my global AGENTS.md
 
   ```markdown
   - Agent workspace convention: If your cwd is under `~/agent-root/` (i.e. `~/agent-root/**/*`), read `~/agent-root/README.md` and follow the agent workspace convention defined there. Otherwise, ignore this bullet point.
