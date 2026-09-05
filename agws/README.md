@@ -1,10 +1,10 @@
 ---
-AGENT_WS_PARENT: ~/agent-root/
+AGWS_HOME: ~/agws/
 ---
 
 # How Agent Workspace Works
 
-A top-level Git directory under `AGENT_WS_PARENT` is called an **agent workspace (agws)**. It is used as durable shared context about different aspects of a topic across agent sessions. An agent workspace may represent a ticket, investigation, or any other topic.
+A top-level Git directory under `AGWS_HOME` is called an **agent workspace (agws)**. It is used as durable shared context about different aspects of a topic across agent sessions. An agent workspace may represent a ticket, investigation, or any other topic.
 
 ## How to maintain agent workspace
 
@@ -48,7 +48,7 @@ When we have several tightly related documents generated from a convo, we don't 
 
 Add a folder `README.md` only when it is worth it. Keep nesting shallow. One level of topic folders is usually enough. Edits within a topic update the nearest folder README; the root README changes only when a whole topic is added or removed.
 
-> Note: A `docs/<topic>/README.md` is only an index; it does **not** make the folder a separate workspace. Agent workspace is always defined as the top level git repo under `AGENT_WS_PARENT`
+> Note: A `docs/<topic>/README.md` is only an index; it does **not** make the folder a separate workspace. Agent workspace is always defined as the top level git repo under `AGWS_HOME`
 
 > Note: Grouping and indexing are two separate decisions. A `docs/<folder>/` may simply group loosely related documents under a category – that alone does **not** require a folder README; the root README can still list those documents individually (e.g. `docs/playbooks/restart.md`).
 
@@ -133,4 +133,4 @@ cc93a21 init agent workspace
 
 ## How to know which agent workspace you are in?
 
-Traverse upward until reaching `AGENT_WS_PARENT`. The top-level Git repository below `AGENT_WS_PARENT` is the agent workspace you are in.
+Traverse upward until reaching `AGWS_HOME`. The top-level Git repository below `AGWS_HOME` is the agent workspace you are in.

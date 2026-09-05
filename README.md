@@ -14,7 +14,7 @@ Agent workspace convention provides these features:
 
 ## Getting Started
 
-- Copy `./agent-root` to your file system at `~/agent-root`. It contains
+- Copy `./agws` to your file system at `~/agws`. It contains
 
   - a `README.md` file that explains the agent workspace convention to LLM agents
 
@@ -22,13 +22,13 @@ Agent workspace convention provides these features:
 
     ```bash
     cd <parent of workspace>
-    ~/agent-root/init-agent-ws.sh <workspace name>
+    ~/agws/init-agent-ws.sh <workspace name>
     ```
 
-- Update global `AGENTS.md` file to point agents to `~/agent-root/README.md` if necessary. For example, I'm using this bullet point in my global `AGENTS.md`
+- Update global `AGENTS.md` file to point agents to `~/agws/README.md` if necessary. For example, I'm using this bullet point in my global `AGENTS.md`
 
   ```markdown
-  - Agent workspace convention: If your cwd is under `~/agent-root/` (i.e. `~/agent-root/**/*`), read `~/agent-root/README.md` and follow the agent workspace convention defined there. Otherwise, ignore this bullet point.
+  - Agent workspace convention: If your cwd is under `~/agws/` (i.e. `~/agws/**/*`), read `~/agws/README.md` and follow the agent workspace convention defined there. Otherwise, ignore this bullet point.
   ```
 
 ## Example
@@ -37,12 +37,12 @@ Assume you have set up agws as is described in [Getting Started](#getting-starte
 
 Let's say you are working on a bug in an API service that causes infinite retries. The ticket is called `TICKET_123`.
 
-As a user, you will first use the `./agent-root/init-agent-ws.sh` script in this repo to create an agws about this topic:
+As a user, you will first use the `./agws/init-agent-ws.sh` script in this repo to create an agws about this topic:
 
 ```bash
-mkdir -p ~/agent-root/tickets
-cd ~/agent-root/tickets/
-~/agent-root/init-agent-ws.sh ticket_123
+mkdir -p ~/agws/tickets
+cd ~/agws/tickets/
+~/agws/init-agent-ws.sh ticket_123
 cd ticket_123/
 ```
 
@@ -56,7 +56,7 @@ Then, you will spawn agents in the agws to work on different aspects of this bug
 The agents will pick up the agws convention from their global `AGENT.md` (per our setup in [Getting Started](#getting-started)), and persist their knowledge in the agws as docs and artifacts. After several sessions, the agws may evolve into a folder like this:
 
 ```text
-~/agent-root/tickets/ticket_123
+~/agws/tickets/ticket_123
 ├── .git/
 ├── .gitignore
 ├── README.md
@@ -120,7 +120,7 @@ cc93a21 init agent workspace
 
 ## How the convention works
 
-See `./agent-root/README.md` for the full convention. In short:
+See `./agws/README.md` for the full convention. In short:
 
 - Each workspace is a Git repository for one topic. The root `README.md` contains a table of content that a summary of each doc, so the agent can have an overview of the context, and read into the details if needed.
 
