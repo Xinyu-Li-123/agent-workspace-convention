@@ -12,7 +12,7 @@ A top-level Git directory under `AGWS_HOME` is called an **agent workspace (agws
 
 Treat the workspace filesystem as shared memory for all agents spawned in this workspace. Important findings should be persisted here, instead of living only in conversation history.
 
-Assume cwd is the agent workspace root, `~/README.md` is the entry point. Keep it concise: maintain an index of durable knowledge and artifacts with brief descriptions. Agents should read `./README.md` first, then load only the documents or artifacts relevant to their task.
+Assume cwd is the agent workspace root, `./README.md` is the entry point. Keep it concise: maintain an index of durable knowledge and artifacts with brief descriptions. Agents should read `./README.md` first, then load only the documents or artifacts relevant to their task.
 
 When a session produces useful knowledge:
 
