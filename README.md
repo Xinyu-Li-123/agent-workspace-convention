@@ -1,6 +1,6 @@
 # Agent Workspace Convention
 
-Agent workspace convention is a set of rules for ai agents to maintain durable shared context about a topic across sessions. An agent workspace may represent a ticket, investigation, or any other topic.
+Agent workspace convention is a set of rules for AI agents to maintain durable shared context about a topic across sessions. An agent workspace may represent a ticket, investigation, or any other topic.
 
 For example, to resolve a ticket, I need to let agents read the codebase for background knowledge, triage the bug statically, reproduce the bug, and implement the fix. All these can be organized under one workspace about this ticket, so an agent implementing the fix can know how the bug can be reproduced.
 
@@ -18,7 +18,7 @@ Agent workspace convention provides these features:
 
   - a `README.md` file that explains the agent workspace convention to LLM agents
 
-  - a script `init-agent-ws.md` that scaffold a workspace. You can use it by
+  - a script `init-agent-ws.sh` that scaffolds a workspace. You can use it by
 
     ```bash
     cd <parent of workspace>
